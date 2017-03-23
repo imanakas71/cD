@@ -1,21 +1,11 @@
 #!/usr/bin/env python
 #coding:utf-8
-import unicodedata
 import difflib
 dirNames=[]
 fileNames = []
 numberofFiles = 0
 previousName = ''
-
-def is_japanese(string):
-    for ch in string:
-        name = unicodedata.name(ch) 
-        if "CJK UNIFIED" in name \
-        or "HIRAGANA" in name \
-        or "KATAKANA" in name:
-            return True
-    return False
-
+readData = 'books.txt'
 
 def checkSimilarity(number):
 
@@ -32,7 +22,7 @@ def checkSimilarity(number):
 
 def readDatFile():
     global previousName
-    for line in open('mangaZip.txt','r'):
+    for line in open(readData,'r'):
         targetFileLine = line.rsplit(" ",2)
         basename = targetFileLine[0]
         if basename != previousName:
@@ -42,9 +32,9 @@ def readDatFile():
 
 def decomposit():
     numberofFiles = len(fileNames)
-    print "ファイル数:", numberofFiles
-    checkSimilarity(numberofFiles)
     
+    checkSimilarity(numberofFiles)
+ 
 
 
 if __name__ == '__main__':

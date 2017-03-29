@@ -38,7 +38,7 @@ python 2.7 で組んだプログラムです。  　
 ```   
 PYTHONIOENCODING=utf-8
 export PYTHONIOENCODING
-```    
+```   
 環境変数、books.txt ともに出来上がったら   
 ```
 % cD.py

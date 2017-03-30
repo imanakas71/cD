@@ -31,10 +31,13 @@ python 2.7 で組んだプログラムです。  　
 自炊した書籍を保存しているフォルダー内で、まず本の一覧を作ります。Windowsだと   
 
 ```
-% tree /f >books.txt
-```   
-したあと、いらないスペースや罫線を全部消し去りファイル名だけが並んでいるファイルを作るのが手っ取り早いです。   
-あと、シェルの環境変数`PYTHOIOENCODING`を`utf-8`にしないとリダイレクトができません。   
+  --- Windows で ---
+% tree /f >booksWin.txt
+  --- cygwin, Linuxなどで ---
+% cDpros.sh booksWin.txt
+```   
+で。  books.txt は 生成できます
+あと、シェルの環境変数`PYTHOIOENCODING`を`utf-8`にしないとリダイレクトができません。  。 
 ```   
 PYTHONIOENCODING=utf-8
 export PYTHONIOENCODING

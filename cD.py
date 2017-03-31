@@ -2,6 +2,8 @@
 #coding:utf-8
 import unicodedata
 import difflib
+import os
+import sys
 from decimal import (Decimal, ROUND_DOWN)
 dirNames=[]
 fileNames = []
@@ -35,14 +37,14 @@ def checkSimilarity(number):
                     v = Decimal(s).quantize(Decimal('0.001'), rounding=ROUND_DOWN)
                     x1 = dict[str1]
                     x2 = dict[str2]
-                    if x1 > x2:
+                    if x1 > x2 :
                         print u"類似の可能性: "+ str(v).decode('utf-8')+ u"   :"+str1+"("+str(x1).decode('utf-8')+")"+ "<-->"+str2+"("+str(x2).decode('utf-8')+")"
 
 
 
-def readDatFile():
+def readDatFile(fileName):
     global previousName
-    for line in open(readData,'r'):
+    for line in open(fileName,'r'):
         targetFileLine = line.rsplit(" ",2)
         basename = targetFileLine[0].decode('utf-8')
         if basename != previousName:
@@ -60,5 +62,11 @@ def decomposit():
 
 
 if __name__ == '__main__':
-    readDatFile()
+    os.environ["PYTHONIOENCODING"]='utf-8'
+    argv = sys.argv
+    length = len(argv)
+    if length == 2:
+        readData = argv[1]
+        print u"Reading "+argv[1]
+    readDatFile(readData)
     decomposit()

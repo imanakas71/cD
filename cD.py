@@ -11,6 +11,8 @@ dict={}
 numberofFiles = 0
 previousName = ''
 readData = 'books.txt'
+fromBase=[]
+toBase=[]
 
 def is_japanese(string):
     for ch in string:
@@ -21,6 +23,10 @@ def is_japanese(string):
             return True
     return False
 
+def putCandidateCommand():
+    from os.path import join, getsize
+    for root, dirs, files in os.walk('.'):
+        pass
 def checkSimilarity(number):
 
     for i in range(number):
@@ -39,7 +45,8 @@ def checkSimilarity(number):
                     x2 = dict[str2]
                     if x1 > x2 :
                         print u"類似の可能性: "+ str(v).decode('utf-8')+ u"   :"+str1+"("+str(x1).decode('utf-8')+")"+ "<-->"+str2+"("+str(x2).decode('utf-8')+")"
-
+                        fromBase.append[str1]
+                        toBase.append[str2]
 
 
 def readDatFile(fileName):

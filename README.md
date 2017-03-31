@@ -55,7 +55,7 @@ cygwin, Linuxなどで
 ```
 % cDpros.sh booksWin.txt
 ```
-で。  books.txt は 生成できます
+で。  books.txt は 生成できます。cDpros.sh の稼働条件として nkf (日本語漢字フィルタ)が必要です。   
 あと、シェルの環境変数`PYTHOIOENCODING`を`utf-8`にしないとリダイレクトができません。  。 
 
 
